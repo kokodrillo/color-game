@@ -8,9 +8,22 @@ let colors = [
   ]
 
 let squares = document.querySelectorAll(".square");
-for (let i = 0; i < squares.length; i++){
+for (let i = 0; i < squares.length; i ++){
   squares[i].style.backgroundColor = colors[i]
 }
 
 let pickedColor = colors[3];
+
+let colorDisplay = document.getElementById("display");
+colorDisplay.textContent = pickedColor;
+for(let i = 0; i < squares.length; i ++){
+  squares[i].style.backgroundColor = colors[i];
+  squares[i].addEventListener("click",function(){
+    let clickedColor = this.style.backgroundcolor;
+    if (clickedColor === pickedColor){
+      alert("correct!");}
+    else {alert("wrong!")}
+    })
+  }
+
 
