@@ -26,4 +26,11 @@ for(let i = 0; i < squares.length; i ++){
     })
   }
 
+let messageDisplay = document.querySelector("#message");
+if(clickedColor === pickedColor){
+  messageDisplay.textContent = "correct"
+}
+else {
+  messageDisplay.textContent = "Try again"
+}
 
