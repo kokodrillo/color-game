@@ -20,17 +20,22 @@ for(let i = 0; i < squares.length; i ++){
   squares[i].style.backgroundColor = colors[i];
   squares[i].addEventListener("click",function(){
     let clickedColor = this.style.backgroundColor;
-    if (clickedColor === pickedColor){
-      alert("correct!");}
-    else {this.style.backgroundColor = "#232323"} //black
+      if (clickedColor === pickedColor){
+        alert("correct!");}
+      else {this.style.backgroundColor = "#232323"} //black
+
+    let messageDisplay = document.querySelector("#message");
+      if(clickedColor === pickedColor){
+      messageDisplay.textContent = "correct"
+      }
+      else {
+      messageDisplay.textContent = "Try again"
+      }
     })
   }
 
-let messageDisplay = document.querySelector("#message");
-if(clickedColor === pickedColor){
-  messageDisplay.textContent = "correct"
+function changeColors(color){
+  for(let i = 0; i < squares.length; i ++){
+    squares[i].backgroundColor = color;
+  }
 }
-else {
-  messageDisplay.textContent = "Try again"
-}
-

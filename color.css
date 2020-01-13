@@ -8,6 +8,10 @@
 
 .container{
   max-width: 600px;margin: 0 auto;
+  background-color: black;ax-width: 800px;
+    /* margin: 0 auto; */
+    background-color: #FFEB3B;
+    max-height: 800px;
 }
 
 h1{
