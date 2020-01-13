@@ -1,0 +1,19 @@
+.square{
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  padding: 10px;
+  display: inline-block;
+}
+
+.container{
+  max-width: 600px;margin: 0 auto;
+  background-color: black;ax-width: 800px;
+    /* margin: 0 auto; */
+    background-color: #FFEB3B;
+    max-height: 800px;
+}
+
+h1{
+  color: red;
+}
