@@ -12,7 +12,24 @@ for (let i = 0; i < squares.length; i ++){
   squares[i].style.backgroundColor = colors[i]
 }
 
-let pickedColor = colors[3];
+// let colors = generateRandomColors(6);
+function generateRandomColors(){
+  let array = [];
+  for(let i = 0; i < squares.length; i ++){
+    let r = Math.floor(Math.random()*256);
+    let g = Math.floor(Math.random()*256);
+    let b = Math.floor(Math.random()*256);
+    return "rgb ("+ r +" , "+ g +" , " + b + ")";
+  }
+}
+
+
+
+let pickedColor = "";
+function pickColor(){ // pick random colors
+  let random = Math.floor(Math.random()*colors.length);
+  return colors[random];
+}
 
 let colorDisplay = document.getElementById("display");
 colorDisplay.textContent = pickedColor;
@@ -34,7 +51,7 @@ for(let i = 0; i < squares.length; i ++){
     })
   }
 
-function changeColors(color){
+function changeColors(color){ //change squares into a color that is a winning color
   for(let i = 0; i < squares.length; i ++){
     squares[i].backgroundColor = color;
   }
