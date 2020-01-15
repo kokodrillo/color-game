@@ -1,5 +1,5 @@
 let squares = document.querySelectorAll(".square");
-let colors = generateRandomColors(6); // generate colors for 6 squares
+let colors = generateRandomColors(6); // generate colors for 6 squares randomly
 // let colors = [
 //   "rgb (255, 0, 0)",
 //   "rgb (255, 255, 0)",
@@ -11,6 +11,18 @@ let colors = generateRandomColors(6); // generate colors for 6 squares
 let pickedColor = pickColor();
 let colorDisplay = document.getElementById("display");
 let messageDisplay = document.querySelector("#message");
+let h1 = document.querySelector("h1");
+let resetButton = document.getElementById("reset");
+
+//reset button
+resetButton.addEventListener("click", function(){
+  colors = generateRandomColors(6);
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for(let i = 0; i < squares.length; i ++){
+  squares[i].style.backgroundColor = colors[i];
+}
+})
 
 //will change colors of squares
 for (let i = 0; i < squares.length; i ++){
@@ -23,8 +35,10 @@ for(let i = 0; i < squares.length; i ++){
   squares[i].style.backgroundColor = colors[i];
   squares[i].addEventListener("click",function(){
     let clickedColor = this.style.backgroundColor;
-      if (clickedColor === pickedColor){
-        alert("correct!");}
+
+      if(clickedColor === pickedColor){  //changing h1 to the winning color as well if you win
+        h1.style.backgroundColor = clickedColor;
+        }
       else {this.style.backgroundColor = "#232323"} //black
       if(clickedColor === pickedColor){
       messageDisplay.textContent = "correct"
@@ -34,6 +48,8 @@ for(let i = 0; i < squares.length; i ++){
       }
     });
   }
+
+
 
 //if you win, change square's colors into a color that is a winning color
 function changeColors(color){
@@ -64,3 +80,4 @@ function generateRandomColors(){
   }
   return array;
 }
+
